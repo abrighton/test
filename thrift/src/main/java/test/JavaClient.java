@@ -20,6 +20,7 @@
 package test;
 
 // Generated code
+
 import org.tmt.test.*;
 
 import org.apache.thrift.TException;
@@ -46,7 +47,8 @@ public class JavaClient {
             TProtocol protocol = new TBinaryProtocol(transport);
             BinaryService.Client client = new BinaryService.Client(protocol);
 
-            perform(client, count, size);
+            perform(client, count, size, false);
+            perform(client, count, size, true);
 
             transport.close();
         } catch (TException x) {
@@ -54,12 +56,15 @@ public class JavaClient {
         }
     }
 
-    private static void perform(BinaryService.Client client, int count, int size) throws TException {
+    private static void perform(BinaryService.Client client, int count, int size, boolean print) throws TException {
         long t = System.currentTimeMillis();
-        for(int i = 0; i < count; i++) {
+        for (int i = 0; i < count; i++) {
             client.fetchBlob(size);
         }
-        double secs = (System.currentTimeMillis() - t)/1000.0;
-        System.out.println("Transfered " + count + " " + size + " byte blobs in " + secs + " seconds");
+        if (print) {
+            double secs = (System.currentTimeMillis() - t) / 1000.0;
+            System.out.println("Transfered " + count + " " + size + " byte blobs in " + secs + " seconds = "
+                + (count*size/secs) + " bytes/sec");
+        }
     }
 }
