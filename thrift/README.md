@@ -20,8 +20,8 @@ Java Client
 
 The java client can be build with "sbt assembly" and run from the target/scala-2.10 directory with:
 
-  java -jar TestThrift-assembly-1.0.jar serverHost 9090 1024 102
+  java -jar TestThrift-assembly-1.0.jar serverHost 9090 1024
 
-Where the arguments are the server hostname, port number, count, and blob size.
-The client them makes "count" requests to the server, each for "blob size" bytes.
-The elapsed time is printed at the end.
+Where the arguments are the server hostname, port number, and count (number of times to make the request).
+The client then makes "count" requests to the server, for each of the message sizes: 32, 64, 256, and 1024 bytes.
+The elapsed time is printed for for each set and the average at the end.
