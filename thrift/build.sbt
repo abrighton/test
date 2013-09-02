@@ -13,7 +13,7 @@ scalaVersion := "2.10.2"
 
 libraryDependencies += "org.slf4j" % "slf4j-log4j12" % "1.7.5"
 
-libraryDependencies += "org.apache.thrift" % "libthrift" % "0.9.0"
+libraryDependencies += "org.apache.thrift" % "libthrift" % "0.9.1"
 
 seq(ThriftPlugin.thriftSettings: _*)
 
