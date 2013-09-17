@@ -32,10 +32,10 @@ Usage:
 
  First start the subscriber:
 
-   RedisPubSub sub channel host port
+   java -jar TestRedis-assembly-1.0.jar sub channel host port
 
  Then start the publisher:
 
-   RedisPubSub pub channel count size host port
+   java -jar TestRedis-assembly-1.0.jar pub channel count size host port
 
  Host is the host where the redis server is running (normally on port 6379)
