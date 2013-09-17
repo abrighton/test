@@ -17,15 +17,16 @@ Run the Test
 
 Make sure the redis server is running.
 
-To test publisher and subscriber on the local host, run:
+To test publisher and subscriber on the local host, run the subscriber first:
 
   java -jar TestRedis-assembly-1.0.jar sub chan1 localhost 6379
 
-in one terminal window, and:
+in one terminal window, and then start the publisher:
 
   java -jar TestRedis-assembly-1.0.jar pub chan1 100000 128 localhost 6379
 
-in another window.
+in another window. Note that you have to kill the publisher in this version, since it
+does not detect when the subscriber is done (TODO).
 
 Usage:
 ------
