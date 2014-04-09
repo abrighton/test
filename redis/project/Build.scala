@@ -7,7 +7,7 @@ object Builds extends Build {
   lazy val buildSettings = Defaults.defaultSettings ++ Seq(
     version := "1.0",
     organization := "org.tmt",
-    scalaVersion := "2.10.2"
+    scalaVersion := "2.10.3"
   )
 
   lazy val app = Project("TestRedis", file("."),
